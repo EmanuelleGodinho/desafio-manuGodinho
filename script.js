@@ -13,3 +13,8 @@ botoesEspecialidade.forEach(function(botao) {
     });
 
 });
+.especialidades button.selecionado {
+    background-color: #176b87;
+    color: white;
+    border: 2px solid #0d4f63;
+}
