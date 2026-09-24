@@ -1,14 +1,62 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f8fb;
+    background-color: #eef7f8;
     margin: 0;
     padding: 40px;
 }
 
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
 h1 {
     color: #176b87;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
 }
 
 p {
-    color: #444;
+    text-align: center;
+    color: #555;
+}
+
+.especialidades {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.especialidades button {
+    padding: 18px;
+    border: 1px solid #b8dfe5;
+    background-color: #f8ffff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.especialidades button:hover {
+    background-color: #dff3f6;
+}
+
+.continuar {
+    display: block;
+    margin: 30px auto 0;
+    padding: 15px 40px;
+    background-color: #176b87;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
 }
