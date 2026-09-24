@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>FisioFácil - Agendamento</title>
 
     <link rel="stylesheet" href="style.css">
@@ -11,41 +12,330 @@
 
 <body>
 
-    <div class="container">
-
+    <header>
         <h1>FisioFácil</h1>
+        <p>Agendamento de fisioterapia</p>
+    </header>
 
-        <h2>Agende sua consulta</h2>
+    <main>
 
-        <p>Escolha a especialidade de fisioterapia:</p>
+        <!-- TELA 1 -->
+        <section id="tela1" class="tela ativa">
 
-        <div class="especialidades">
+            <h2>Escolha a especialidade</h2>
 
-            <button>Fisioterapia Ortopédica</button>
+            <p class="explicacao">
+                Selecione uma das opções abaixo para continuar com seu atendimento.
+            </p>
 
-            <button>Fisioterapia Neurológica</button>
+            <div class="especialidades">
 
-            <button>Fisioterapia Respiratória</button>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Ortopédica')">
+                    Fisioterapia Ortopédica
+                </button>
 
-            <button>Fisioterapia Esportiva</button>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Neurológica')">
+                    Fisioterapia Neurológica
+                </button>
 
-            <button>Fisioterapia Pediátrica</button>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Respiratória')">
+                    Fisioterapia Respiratória
+                </button>
 
-            <button>Fisioterapia Geriátrica</button>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Esportiva')">
+                    Fisioterapia Esportiva
+                </button>
 
-            <button>Fisioterapia Pélvica</button>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Pediátrica')">
+                    Fisioterapia Pediátrica
+                </button>
 
-            <button>Fisioterapia Cardiovascular</button>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Geriátrica')">
+                    Fisioterapia Geriátrica
+                </button>
 
-            <button>Fisioterapia Dermatofuncional</button>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Pélvica')">
+                    Fisioterapia Pélvica
+                </button>
 
-            <button>Fisioterapia Hospitalar</button>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Cardiovascular')">
+                    Fisioterapia Cardiovascular
+                </button>
 
-        </div>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Dermatofuncional')">
+                    Fisioterapia Dermatofuncional
+                </button>
 
-        <button class="continuar">CONTINUAR</button>
+                <button onclick="selecionarEspecialidade(this, 'Fisioterapia Hospitalar')">
+                    Fisioterapia Hospitalar
+                </button>
 
-    </div>
+            </div>
+
+            <div class="botoes">
+
+                <button class="cancelar">
+                    CANCELAR
+                </button>
+
+                <button class="continuar" onclick="irParaTela2()">
+                    CONTINUAR
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA 2 -->
+        <section id="tela2" class="tela">
+
+            <h2>Escolha seu fisioterapeuta</h2>
+
+            <p>
+                Especialidade escolhida:
+                <strong id="especialidadeEscolhida"></strong>
+            </p>
+
+            <div class="profissionais">
+
+                <button onclick="selecionarProfissional(this, 'Ana Souza')">
+                    <strong>Ana Souza</strong>
+                    <span>Fisioterapia Esportiva</span>
+                </button>
+
+                <button onclick="selecionarProfissional(this, 'João Mendes')">
+                    <strong>João Mendes</strong>
+                    <span>Fisioterapia Ortopédica</span>
+                </button>
+
+                <button onclick="selecionarProfissional(this, 'Carla Lima')">
+                    <strong>Carla Lima</strong>
+                    <span>Fisioterapia Neurológica</span>
+                </button>
+
+                <button onclick="selecionarProfissional(this, 'Pedro Alves')">
+                    <strong>Pedro Alves</strong>
+                    <span>Fisioterapia Respiratória</span>
+                </button>
+
+                <button onclick="selecionarProfissional(this, 'Marina Costa')">
+                    <strong>Marina Costa</strong>
+                    <span>Fisioterapia Pélvica</span>
+                </button>
+
+            </div>
+
+            <div class="botoes">
+
+                <button class="voltar" onclick="voltarParaTela1()">
+                    AVANÇAR
+                </button>
+
+                <button class="continuar" onclick="irParaTela3()">
+                    CONTINUAR
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA 3 -->
+        <section id="tela3" class="tela">
+
+            <h2>Escolha sua data e horário</h2>
+
+            <p>
+                Escolha quando deseja realizar sua consulta.
+            </p>
+
+            <label for="data">Data:</label>
+
+            <input type="date" id="data">
+
+
+            <h3>Horários disponíveis</h3>
+
+            <div class="horarios">
+
+                <button onclick="selecionarHorario(this, '08:00')">
+                    08:00
+                </button>
+
+                <button onclick="selecionarHorario(this, '08:30')">
+                    08:30
+                </button>
+
+                <button onclick="selecionarHorario(this, '09:00')">
+                    09:00
+                </button>
+
+                <button onclick="selecionarHorario(this, '09:30')">
+                    09:30
+                </button>
+
+                <button onclick="selecionarHorario(this, '10:00')">
+                    10:00
+                </button>
+
+                <button onclick="selecionarHorario(this, '14:00')">
+                    14:00
+                </button>
+
+                <button onclick="selecionarHorario(this, '14:30')">
+                    14:30
+                </button>
+
+                <button onclick="selecionarHorario(this, '15:00')">
+                    15:00
+                </button>
+
+            </div>
+
+            <div class="botoes">
+
+                <button class="voltar" onclick="voltarParaTela2()">
+                    VOLTAR
+                </button>
+
+                <button class="continuar" onclick="irParaTela4()">
+                    CONTINUAR
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA 4 -->
+        <section id="tela4" class="tela">
+
+            <h2>Confirme seus dados</h2>
+
+            <p class="explicacao">
+                Preencha todos os campos abaixo para finalizar.
+            </p>
+
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" placeholder="Digite seu nome">
+
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" placeholder="000.000.000-00">
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" placeholder="(00) 00000-0000">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="seuemail@email.com">
+
+            <label for="cor">
+                Qual é a sua cor favorita?
+            </label>
+
+            <input type="text" id="cor" placeholder="Essa informação é obrigatória">
+
+            <label for="animal">
+                Qual animal você seria?
+            </label>
+
+            <select id="animal">
+
+                <option value="">
+                    Selecione uma opção
+                </option>
+
+                <option value="cachorro">
+                    Cachorro
+                </option>
+
+                <option value="gato">
+                    Gato
+                </option>
+
+                <option value="onca">
+                    Onça
+                </option>
+
+                <option value="passaro">
+                    Pássaro
+                </option>
+
+            </select>
+
+            <p class="texto-pequeno">
+                As perguntas adicionais são necessárias para concluir seu agendamento.
+            </p>
+
+            <div id="mensagemErro"></div>
+
+            <div class="botoes">
+
+                <button class="voltar" onclick="voltarParaTela3()">
+                    VOLTAR
+                </button>
+
+                <button class="continuar" onclick="finalizarAgendamento()">
+                    FINALIZAR
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA FINAL -->
+        <section id="telaFinal" class="tela final">
+
+            <h1>PARABÉNS!</h1>
+
+            <h2>Consulta agendada com sucesso.</h2>
+
+            <div class="resumo">
+
+                <p>
+                    <strong>Especialidade:</strong>
+                    <span id="resumoEspecialidade"></span>
+                </p>
+
+                <p>
+                    <strong>Fisioterapeuta:</strong>
+                    <span id="resumoProfissional"></span>
+                </p>
+
+                <p>
+                    <strong>Data:</strong>
+                    <span id="resumoData"></span>
+                </p>
+
+                <p>
+                    <strong>Horário:</strong>
+                    <span id="resumoHorario"></span>
+                </p>
+
+            </div>
+
+            <p class="mensagem-final">
+                Você conseguiu chegar ao final da pior experiência
+                de usuário possível.
+            </p>
+
+            <p class="mensagem-final">
+                O sistema funciona. A experiência é que foi questionável.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            FisioFácil © 2026
+        </p>
+
+    </footer>
+
 
     <script src="script.js"></script>
 
